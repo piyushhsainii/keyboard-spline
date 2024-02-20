@@ -31,3 +31,13 @@ body {
     text-wrap: balance;
   }
 }
+
+/* @keyframes spin {
+  to {
+      transform: rotateY(60deg)
+  }
+}
+.animate-spin {
+  animation: spin 8s linear infinite;
+  
+} */
