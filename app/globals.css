@@ -32,12 +32,6 @@ body {
   }
 }
 
-/* @keyframes spin {
-  to {
-      transform: rotateY(60deg)
-  }
-}
-.animate-spin {
-  animation: spin 8s linear infinite;
-  
+/* body{
+  overflow-x: hidden;
 } */
