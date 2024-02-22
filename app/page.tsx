@@ -5,6 +5,7 @@ const Spline = React.lazy(()=>import('@splinetool/react-spline'))
 import Lenis from '@studio-freight/lenis'
 import { useMediaQuery } from '@mui/material';
 import { Typewriter , Cursor } from 'react-simple-typewriter'; 
+import { Instagram } from 'lucide-react';
 
 export default function App() {
 
@@ -50,14 +51,14 @@ export default function App() {
    <div>
       {
          <Fragment>
-           <div className={` flex w-[1200px] h-screen justify-center m-auto  border border-white flex-wrap overflow-visible `}
+           <div className={` flex w-[1200px] h-screen justify-center m-auto  flex-wrap overflow-visible `}
            >
-               <motion.div className='border border-yellow-400 w-[100%] md:w-[65%] h-[90vh] overflow-visible ' 
+               <motion.div className=' w-[100%] md:w-[65%] h-[90vh] overflow-visible ' 
                style={{ y: yPos, x: xPos }}
                  >
                   <Suspense fallback={<div className='text-white'>Loading...</div>}>
-                 {/* <Spline ref={ref}   className='border    border-red-300 cursor-grab ' 
-                  scene="https://prod.spline.design/u8kMnjIBlBR9eCSO/scene.splinecode" /> */}
+                 <Spline ref={ref}   className=' cursor-grab ' 
+                  scene="https://prod.spline.design/u8kMnjIBlBR9eCSO/scene.splinecode" />
                   </Suspense>
                </motion.div>
                <div className='w-[1200px] m-auto md:w-[35%] h-auto'>
@@ -78,8 +79,18 @@ export default function App() {
                  </div>
                   <div className='p-2 ml-14'> <Typewriter typeSpeed={60} words={[`PRESS ANY KEY TO TYPE`, 'TYPE AND TEST OUR KEYBOARD']} loop={false} /> </div>
              </div>
-             <div className='w-[1200px] h-[100vh] ' >
-               section 2
+             <div className='w-[1200px] h-[40vh] m-auto flex justify-center text-slate-200  ' >
+               <div  >
+                  <div className='text-3xl  text-center mt-16'>KEYBOARD </div>
+                  <div className='text-lg text-center text-slate-400'  >ELEVATE YOUR INPUT </div>
+                  <div className='text-[12px] mt-5 text-center text-slate-400'  >2023 all Right Reserved Term of use GreenMind</div>
+                  <div className='text-[12px] mt-5 text-center text-slate-400 flex justify-center gap-5'  >
+                    <img src="/github.png" alt="" />
+                    <img src="/insta.png" alt="" />
+                    <img src="/linkedin.png" alt="" />
+                  </div>
+
+               </div>
              </div>
          </Fragment>
      
