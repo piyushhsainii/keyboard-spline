@@ -6,6 +6,7 @@ import Lenis from '@studio-freight/lenis'
 import { useMediaQuery } from '@mui/material';
 import { Typewriter , Cursor } from 'react-simple-typewriter'; 
 import { Instagram } from 'lucide-react';
+import Navbar from './Navbar';
 
 export default function App() {
 
@@ -30,7 +31,7 @@ export default function App() {
     offset: [0, 0.43]
   });
 
-  const yPos = isDesktop ? useTransform(scrollYProgress, [0, 1], [0, 650  ]) : useTransform(scrollYProgress, [0, 1], [0, 0])
+  const yPos = isDesktop ? useTransform(scrollYProgress, [0, 1], [0, 620  ]) : useTransform(scrollYProgress, [0, 1], [0, 0])
   const xPos = isDesktop ? useTransform(scrollYProgress, [0, 1], [0, 430  ]) : useTransform(scrollYProgress, [0, 1], [0, 0])
 
   useEffect(() => {
@@ -47,10 +48,11 @@ export default function App() {
 
     requestAnimationFrame(raf);
   }, []);
-  return (
+  return ( 
    <div>
       {
          <Fragment>
+          <Navbar />
            <div className={` flex w-[1200px] h-screen justify-center m-auto  flex-wrap overflow-visible `}
            >
                <motion.div className=' w-[100%] md:w-[65%] h-[90vh] overflow-visible ' 
@@ -62,28 +64,28 @@ export default function App() {
                   </Suspense>
                </motion.div>
                <div className='w-[1200px] m-auto md:w-[35%] h-auto'>
-                <div className='w-[400px] text-slate-200 text-7xl font-bold p-2 ml-16 m-4 flex flex-col gap-3 justify-center  ' >
+                <div className=' text-center md:text-start md:w-[400px]  text-slate-200 text-7xl font-bold p-2 ml-16 m-4  flex flex-col gap-3 justify-center  ' >
                     <div>ELEVATE </div> 
                     <div>YOUR</div> 
                     <div>INPUTS</div>
                 </div>
                </div>
            </div>
-             <div className='w-[1200px] m-auto h-[100vh] m-au ' >
+             <div className='w-[1200px] m-auto h-[40vh] md:h-[80vh]  ' >
 
-                <div className='w-[400px] mt-6 text-slate-200 text-6xl font-bold p-2 ml-16 m-4 flex flex-col gap-6 justify-center  ' >
+                <div className='w-[200px] mt-52 md:mt-6 text-slate-200 text-6xl font-bold p-2  text-start flex flex-col gap-6 justify-center  m-auto md:ml-16  ' >
                     <div>TYPE </div> 
                     <div>SMARTER,</div>
                     <div>NOT </div> 
                     <div>HARDER</div>
                  </div>
-                  <div className='p-2 ml-14'> <Typewriter typeSpeed={60} words={[`PRESS ANY KEY TO TYPE`, 'TYPE AND TEST OUR KEYBOARD']} loop={false} /> </div>
+                  <div className='p-2 w-[400px] m-auto md:ml-14'> <Typewriter typeSpeed={60} words={[`PRESS ANY KEY TO TYPE`, 'TYPE AND TEST OUR KEYBOARD']} loop={false} /> </div>
              </div>
-             <div className='w-[1200px] h-[40vh] m-auto flex justify-center text-slate-200  ' >
+             <div className='w-[1200px] h-[20vh] mt-[10rem] md:mt-[0rem] md:h-[40vh] m-auto flex justify-center text-slate-200  ' >
                <div  >
-                  <div className='text-3xl  text-center mt-16'>KEYBOARD </div>
+                  <div className='text-3xl  text-center mt-16'>Velocity </div>
                   <div className='text-lg text-center text-slate-400'  >ELEVATE YOUR INPUT </div>
-                  <div className='text-[12px] mt-5 text-center text-slate-400'  >2023 all Right Reserved Term of use GreenMind</div>
+                  <div className='text-[12px] mt-5 text-center text-slate-400'  >2023 all Right Reserved Term of use Velocity</div>
                   <div className='text-[12px] mt-5 text-center text-slate-400 flex justify-center gap-5'  >
                     <img src="/github.png" alt="" />
                     <img src="/insta.png" alt="" />
