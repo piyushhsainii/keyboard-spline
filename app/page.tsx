@@ -7,13 +7,45 @@ import { useMediaQuery } from '@mui/material';
 import { Typewriter , Cursor } from 'react-simple-typewriter'; 
 import { Instagram } from 'lucide-react';
 import Navbar from './Navbar';
+import Image from 'next/image';
 
 export default function App() {
 
   const ref = useRef<any>(null);
   const [windowDimensions, setWindowDimensions] = useState({ width: 0, height: 0 });
+  const [Values, setValues] = useState(620)
+  const [Values2, setValues2] = useState(430)
   const isDesktop = useMediaQuery('(min-width:768px)')
-  console.log(isDesktop)
+  const { scrollYProgress } = useScroll({
+    target: ref.current,
+    offset: [0, 0.43]
+  });
+  let yPos
+  yPos =  useTransform(scrollYProgress, [0, 1], [0, Values]) 
+  
+  !isDesktop ? 
+  setValues(0)
+  :
+  null
+  
+  let xPos
+  xPos =  useTransform(scrollYProgress, [0, 1], [0, Values2  ]) 
+
+  !isDesktop ?
+  setValues2(0)
+  :
+  null
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
   useEffect(() => {
     function handleResize() {
       setWindowDimensions({ width: window.innerWidth, height: window.innerHeight });
@@ -24,29 +56,6 @@ export default function App() {
     return () => {
       window.removeEventListener('resize', handleResize); // Cleanup on component unmount
     };
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: ref.current,
-    offset: [0, 0.43]
-  });
-
-  const yPos = isDesktop ? useTransform(scrollYProgress, [0, 1], [0, 620  ]) : useTransform(scrollYProgress, [0, 1], [0, 0])
-  const xPos = isDesktop ? useTransform(scrollYProgress, [0, 1], [0, 430  ]) : useTransform(scrollYProgress, [0, 1], [0, 0])
-
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    // lenis.on('scroll', (e: any) => {
-    //   console.log(e);
-    // });
-
-    function raf(time: any) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
   }, []);
   return ( 
    <div>
@@ -87,9 +96,9 @@ export default function App() {
                   <div className='text-lg text-center text-slate-400'  >ELEVATE YOUR INPUT </div>
                   <div className='text-[12px] mt-5 text-center text-slate-400'  >2023 all Right Reserved Term of use Velocity</div>
                   <div className='text-[12px] mt-5 text-center text-slate-400 flex justify-center gap-5'  >
-                    <img src="/github.png" alt="" />
-                    <img src="/insta.png" alt="" />
-                    <img src="/linkedin.png" alt="" />
+                    <Image src="/github.png" alt="" />
+                    <Image src="/insta.png" alt="" />
+                    <Image src="/linkedin.png" alt="" />
                   </div>
 
                </div>
